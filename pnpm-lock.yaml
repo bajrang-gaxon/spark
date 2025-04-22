@@ -76,6 +76,19 @@ importers:
         specifier: ^5
         version: 5.8.3
 
+  components/button:
+    dependencies:
+      react-dom:
+        specifier: '>=18 || >=19.0.0-rc.0'
+        version: 19.1.0(react@19.1.0)
+    devDependencies:
+      '@spark/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
+      react:
+        specifier: ^19.0.0
+        version: 19.1.0
+
   packages/react:
     dependencies:
       '@floating-ui/react':
@@ -112,6 +125,15 @@ importers:
       clean-package:
         specifier: ^2.2.0
         version: 2.2.0
+
+  packages/utils:
+    dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      tailwind-merge:
+        specifier: ^3.2.0
+        version: 3.2.0
 
 packages:
 
