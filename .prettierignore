@@ -1,0 +1,10 @@
+node_modules
+dist
+build
+coverage
+*.log
+.turbo
+.next
+build
+scripts
+pnpm-lock.yaml

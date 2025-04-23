@@ -1,10 +1,9 @@
 {
     "$schema": "https://turbo.build/schema.json",
-    "globalDependencies": ["tsconfig.json"],
     "tasks": {
       "build": {
         "dependsOn": ["^build"],
-        "outputs": [".next/**", "dist/**", "lib/**"]
+        "outputs": [".next/**", "dist/**"]
       },
       "typecheck": {
         "cache": false,
