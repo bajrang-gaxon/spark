@@ -1,7 +1,7 @@
 {
-  "name": "@spark/button",
+  "name": "@spark/collapse",
   "version": "0.0.0",
-  "description": "A react component of button",
+  "description": "A react component of spinner",
   "files": ["dist"],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -28,11 +28,10 @@
   "peerDependencies": {
     "react": ">=18 || >=19",
     "react-dom": ">=18 || >=19",
-    "material-ripple-effects": "^2.0.1"
+    "framer-motion": ">=12"
   },
   "dependencies": {
-    "@spark/utils" : "workspace:*",
-    "@spark/spinner" : "workspace:*"
+    "@spark/utils" : "workspace:*"
   },
   "devDependencies": {
     "react": "^19.0.0"

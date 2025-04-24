@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "turbo run dev --parallel",
-    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "dev:next": "pnpm --filter spark-ui-next dev",
+    "build": "turbo run build --filter=@spark/*",
     "start": "turbo run start",
     "test": "turbo run test",
     "lint": "turbo run lint",
@@ -14,7 +15,7 @@
     "format:write": "prettier --write packages/**/**/src --cache",
     "clean": "turbo run clean",
     "clean:node_modules": "rimraf ./packages/**/**/node_modules && rimraf ./node_modules",
-    "clean:all": "pnpm clean && rimraf ./apps/**/node_modules && rimraf ./packages/**/**/node_modules && rimraf ./node_modules ./.turbo"
+    "clean:all": "pnpm clean && rimraf ./apps/**/node_modules && rimraf ./packages/**/**/node_modules && rimraf ./.turbo"
   },
   "keywords": [],
   "author": "",

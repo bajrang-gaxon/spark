@@ -3,27 +3,27 @@ import React, { useRef } from "react";
 // @ts-ignore
 import Ripple from "material-ripple-effects";
 import { twClassNames } from "@spark/utils";
-import { Spinner } from "@spark/spinner";
+import Spinner from "@spark/spinner";
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+// Define the IconButtonProps interface with the required props
+export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "filled" | "outlined" | "ghost" | "link";
   size?: "sm" | "md" | "lg";
-  radius?: "sm" | "md" | "lg" | "full" | "none";
   color?: "default" | "primary" | "secondary" | "success" | "danger" | "warning" | "info";
   fullWidth?: boolean;
   disabled?: boolean;
   loading?: boolean;
-  ripple?: boolean; // <-- new prop
-  icon?: React.ReactNode;
-  iconPosition?: "start" | "end";
+  ripple?: boolean;
+  icon: React.ReactNode;
+  radius?: "sm" | "md" | "lg" | "full" | "none"; // Add radius prop
   className?: string;
   children?: React.ReactNode;
 }
 
 const sizeClasses = {
-  sm: "text-xs px-3 h-8 min-w-14",
-  md: "text-sm px-4 h-10 min-w-16",
-  lg: "text-base px-6 h-12 min-w-16",
+  sm: "text-lg p-3",
+  md: "text-xl p-3",
+  lg: "text-base p-2",
 };
 
 const colorMap = {
@@ -81,22 +81,21 @@ const radiusClasses = {
   none: "rounded-none",
 };
 
-export default function Button({
+export default function IconButton({
   children,
   variant = "filled",
   size = "md",
-  color = "default",
-  radius = "md",
+  color = "primary",
   fullWidth = false,
   disabled = false,
   loading = false,
-  ripple = true, // <-- default true
+  ripple = true,
   icon,
-  iconPosition = "start",
+  radius = "full", // Default radius
   className,
   onClick,
   ...rest
-}: ButtonProps) {
+}: IconButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -104,16 +103,17 @@ export default function Button({
       const rippleInstance = new Ripple();
       rippleInstance.create(e, "dark");
     }
-    onClick?.(e); // Call user-provided onClick handler
+    onClick?.(e);
   };
 
   const baseClasses =
-    "inline-flex items-center justify-center relative box-border outline-none appearance-none select-none font-normal cursor-pointer gap-2 transition-all overflow-hidden";
+    "inline-flex items-center justify-center relative box-border outline-none appearance-none select-none font-normal cursor-pointer transition-all overflow-hidden";
 
   const colorClasses = colorMap[color]?.[variant] || "";
+  const radiusClass = radiusClasses[radius] || radiusClasses.md; // Use the radius class based on the `radius` prop
   const classNames = twClassNames(
     baseClasses,
-    radiusClasses[radius],
+    radiusClass, // Apply the radius class
     sizeClasses[size],
     colorClasses,
     {
@@ -122,8 +122,6 @@ export default function Button({
     },
     className,
   );
-
-  const loadingText = loading ? "Loading..." : undefined;
 
   return (
     <button
@@ -135,13 +133,12 @@ export default function Button({
     >
       {loading ? (
         <>
-          <Spinner /> {loadingText}
+          <Spinner /> Loading
         </>
       ) : (
         <>
-          {icon && iconPosition === "start" && icon}
-          {children}
-          {icon && iconPosition === "end" && icon}
+          {icon && icon} {/* Only show icon */}
+          {children && <span>{children}</span>}
         </>
       )}
     </button>
