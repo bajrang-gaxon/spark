@@ -3,7 +3,7 @@
 
 # dependencies
 node_modules
-/packages/implement
+/apps/experiment
 /.pnp
 .pnp.js
 *.lock
