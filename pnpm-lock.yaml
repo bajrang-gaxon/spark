@@ -35,39 +35,9 @@ importers:
 
   apps/experiment:
     dependencies:
-      '@spark/alert':
+      '@spark/react':
         specifier: workspace:*
-        version: link:../../packages/components/alert
-      '@spark/avatar':
-        specifier: workspace:*
-        version: link:../../packages/components/avatar
-      '@spark/badge':
-        specifier: workspace:*
-        version: link:../../packages/components/badge
-      '@spark/breadcrumb':
-        specifier: workspace:*
-        version: link:../../packages/components/breadcrumb
-      '@spark/button':
-        specifier: workspace:*
-        version: link:../../packages/components/button
-      '@spark/carousel':
-        specifier: workspace:*
-        version: link:../../packages/components/carousel
-      '@spark/chip':
-        specifier: workspace:*
-        version: link:../../packages/components/chip
-      '@spark/collapse':
-        specifier: workspace:*
-        version: link:../../packages/components/collapse
-      '@spark/spinner':
-        specifier: workspace:*
-        version: link:../../packages/components/spinner
-      '@spark/typography':
-        specifier: workspace:*
-        version: link:../../packages/components/typography
-      '@spark/utils':
-        specifier: workspace:*
-        version: link:../../packages/shared/utils
+        version: link:../../packages/core/react
       next:
         specifier: 15.3.0
         version: 15.3.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -240,6 +210,49 @@ importers:
 
   packages/components/typography:
     dependencies:
+      '@spark/utils':
+        specifier: workspace:*
+        version: link:../../shared/utils
+      react-dom:
+        specifier: '>=18 || >=19'
+        version: 19.1.0(react@19.1.0)
+    devDependencies:
+      react:
+        specifier: ^19.0.0
+        version: 19.1.0
+
+  packages/core/react:
+    dependencies:
+      '@spark/alert':
+        specifier: workspace:*
+        version: link:../../components/alert
+      '@spark/avatar':
+        specifier: workspace:*
+        version: link:../../components/avatar
+      '@spark/badge':
+        specifier: workspace:*
+        version: link:../../components/badge
+      '@spark/breadcrumb':
+        specifier: workspace:*
+        version: link:../../components/breadcrumb
+      '@spark/button':
+        specifier: workspace:*
+        version: link:../../components/button
+      '@spark/carousel':
+        specifier: workspace:*
+        version: link:../../components/carousel
+      '@spark/chip':
+        specifier: workspace:*
+        version: link:../../components/chip
+      '@spark/collapse':
+        specifier: workspace:*
+        version: link:../../components/collapse
+      '@spark/spinner':
+        specifier: workspace:*
+        version: link:../../components/spinner
+      '@spark/typography':
+        specifier: workspace:*
+        version: link:../../components/typography
       '@spark/utils':
         specifier: workspace:*
         version: link:../../shared/utils

@@ -1,0 +1,49 @@
+{
+  "name": "@spark/react",
+  "version": "1.0.0",
+  "description": "A tailwindcss for React components.",
+  "author": "",
+  "license": "MIT",
+  "sideEffects": false,
+  "files": ["dist"],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+      ".": {
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.js",
+        "default": "./dist/index.mjs"
+      }
+  },
+  "scripts": {
+    "build": "tsup src",
+    "dev": "tsup src --watch",
+    "clean": "rimraf ./dist ./.turbo",
+    "format:check": "prettier --check src --cache",
+    "format:write": "prettier --write src --cache",
+    "typecheck": "tsc --noEmit"
+   },
+  "keywords": [],
+  "dependencies": {
+    "@spark/alert": "workspace:*",
+    "@spark/avatar": "workspace:*",
+    "@spark/badge": "workspace:*",
+    "@spark/breadcrumb": "workspace:*",
+    "@spark/button": "workspace:*",
+    "@spark/carousel": "workspace:*",
+    "@spark/chip": "workspace:*",
+    "@spark/collapse": "workspace:*",
+    "@spark/spinner": "workspace:*",
+    "@spark/typography": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=18 || >=19",
+    "react-dom": ">=18 || >=19",
+     "@spark/utils" : "workspace:*"
+  },
+  "devDependencies": {
+    "react": "^19.0.0"
+  },
+  "packageManager": "pnpm@10.8.1"
+}
