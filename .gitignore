@@ -4,6 +4,8 @@
 # dependencies
 node_modules
 /apps/experiment
+/apps/experiment/*
+apps/experiment
 /.pnp
 .pnp.js
 *.lock
