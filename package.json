@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "pnpm --filter=spark-ui-next --filter=storybook dev",
     "dev:next": "pnpm --filter spark-ui-next dev",
-    "dev:storybook": "pnpm --filter storybook dev",
+    "dev:story": "pnpm --filter storybook dev",
     "build": "turbo run build --filter=@spark/*",
-    "build:storybook": "turbo run build --filter=storybook build",
+    "build:story": "turbo run build --filter=storybook build",
     "start": "turbo run start --filter=storybook",
     "test": "turbo run test",
     "lint": "turbo run lint",
